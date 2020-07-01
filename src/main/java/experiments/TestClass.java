@@ -23,7 +23,7 @@ public class TestClass {
     }
     
     private void testDB() {
-        FirebaseDB db = new FirebaseDB("admin1.json", "https://startbots-81ecb.firebaseio.com/");
+        FirebaseDB db = new FirebaseDB("admin1.json", "https://chatbots-yihwgt.firebaseio.com/");
         while (true) {
             db.putMessage("msg", scn.nextLine());
         }

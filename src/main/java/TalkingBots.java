@@ -40,7 +40,9 @@ public class TalkingBots {
     
     private final Object BUFFER_LOCK;
     private final Object MESSAGE_LOCK;
-    
+
+    private static String DB_URL = "https://chatbots-yihwgt.firebaseio.com/";
+
     public TalkingBots() {
         notEnglishResponses = new ArrayList<>(Arrays.asList(
                 "Please, speak in english.",
@@ -108,12 +110,12 @@ public class TalkingBots {
     }
     
     public static void main(String[] args) {
-        initFirebase("admin1.json", "https://startbots-81ecb.firebaseio.com/");
+        initFirebase("admin1.json", DB_URL);
         new TalkingBots().testTwoBots();
     }
     
     private void testDatabase() {
-        new FirebaseDB("admin1.json", "https://startbots-81ecb.firebaseio.com/").start();
+        new FirebaseDB("admin1.json", DB_URL).start();
     }
     
     private void asyncMessageInjector() {
